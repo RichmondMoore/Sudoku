@@ -1,0 +1,21 @@
+A Sudoku generator and solver (beginning soon) that is created by implementing the algorithm form this page: https://dlbeer.co.nz/articles/sudoku.html.
+
+*Basics of the Algorithm:*
+
+1. Generate the first 3x3 square as there will be no constraints.
+2. Fill the rest of the first row with the constraint being the first 3 numbers in the row.
+3. Fill the next two rows, with the constraints being both the numbers in the row and column above.
+4. From there, a recursive backtracking algorithm will be implemented to fill the rest of the cells.
+
+*The next steps come straght from the website:* 
+"Given a valid solution grid, the final task is to generate a puzzle by clearing cells, leaving enough clues to guarantee that the puzzle is uniquely solvable. We do this by a random search over the space of possible puzzles with the given solution. A naive strategy for this would be:
+
+Start by storing the solution grid as the best puzzle, with a score of 0.
+
+Randomly add or remove a pair of clues from the grid.
+
+If the new grid is uniquely solvable, with a higher score than the best puzzle so far, store it as the new best puzzle.
+
+Repeat steps 2 and 3 for as many iterations as desired.
+
+The main problem with this approach is that it can get stuck in local maxima in the search space. To rememdy this, we allow the search to wander for 20 random steps from the starting grid before starting the next iteration from the best puzzle found so far."
